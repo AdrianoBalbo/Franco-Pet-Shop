@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favIcon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+
+<body id="app">
+    <header>
+        <nav id="nav-bar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+              <a href="./index.html">
+                <img src="./assets/img/logoFrancoPetShop.png" alt="logo Franco" class="logo" />
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="btn btn-secondary navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav container d-flex justify-content-end align-items-center">
+                  <li class="nav-item">
+                    <a class="aNav" aria-current="page" href="./index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="./juguetes.html">Juguetes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="./farmacia.html">Farmacia</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="#">Contacto</a>
+                  </li>
+                  <li>
+                    <a href="./carrito.html"><img src="./assets/img/carrito-icon.png" alt="carrito" class="carrito" /></a>
+                    <span class="start-100 badge rounded-pill bg-danger badgeCarrito">
+                      {{carrito.length}}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              </div>
+          </nav>
+    </header>
+
+    <main>
+        <img src="./assets/img/banner-contacto.gif" class="d-block w-100 mt-md-3" alt="...">
+        <div class="container mt-3 pb-4 col-10 col-lg-7">
+            <div class="container divForm">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label text-">Apellido</label>
+                    <input type="text" class="form-control" id="apellido">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label text-">Telefono</label>
+                    <input type="number" class="form-control" id="telefono">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label text-">E-mail</label>
+                  <input type="email" class="form-control" id="email">
+              </div>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected disabled>Mascota</option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                    <option value="3">Ambos</option>
+                </select>
+                <div class="mb-3">
+                    <label for="nombreMascota" class="form-label text-">Nombre Mascota</label>
+                    <input type="text" class="form-control" id="nombreMascota">
+                </div>
+                <div class="mb-3">
+                    <label for="comentarios" class="form-label text-">Comentarios</label>
+                    <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                </div>
+                <section id="modal" class="modal ">
+                    <div class="modal_container">
+                        <figure class="modal_contacto">
+                            <img src="./assets/img/icono-mensaje-recibido.gif" alt="" class="imggContacto">
+                        </figure>
+                        <p>Gracias por tu mensaje.</p>
+                        <a href="./index.html" class="cerrar">Cerrar</a>
+                    </div>
+                </section>
+                <button class="btn btn-dark" type="submit"><a class="text-decoration-none text-light" href="#modal">Enviar</a> </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div  class="d-flex flex-column align-items-center justify-content-center">
+            <a class="text-light text-decoration-none text-center mt-2" href="./contacto.html">¿Tienes alguna idea que nos ayude a mejorar? Envíanos tus comentarios</a>
+          <div class="d-flex flex-column justify-content-between align-items-center" id="textofooter">
+            <img class="logoFooter my-2" src="./assets/img/logo-footer.png" >
+            <div class="redes mx-4">
+              <a class="p-2" href="#"><img src="./assets/img/facebook_icon.png" alt="facebook"></a>
+              <a class="p-2" href="#"><img src="./assets/img/icon_whatsapp.png" alt="whatsapp"></a>
+              <a class="p-2" href="#"><img src="./assets/img/instagram_icon.png" alt="instagram"></a>
+            </div>
+          </div>
+            <p class="text-center text-light pt-2">Mind Hub Java - cohort 30 -</p>
+        </div>
+      </footer>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

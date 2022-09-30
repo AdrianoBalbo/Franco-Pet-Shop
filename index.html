@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/img/favIcon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Poppins:wght@300&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Inicio</title>
+</head>
+
+<body id="app">
+  <header>
+    <nav id="nav-bar" class="navbar navbar-expand-lg fixed-top ">
+      <div class="container-fluid">
+        <a href="./index.html">
+          <img src="./assets/img/logoFrancoPetShop.png" alt="logo Franco" class="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="btn btn-secondary navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav container d-flex justify-content-end align-items-center">
+            <li class="nav-item">
+              <a class="aNav" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="aNav" href="./juguetes.html">Juguetes</a>
+            </li>
+            <li class="nav-item">
+              <a class="aNav" href="./farmacia.html">Farmacia</a>
+            </li>
+            <li class="nav-item">
+              <a class="aNav" href="./contacto.html">Contacto</a>
+            </li>
+            <li>
+              <a href="./carrito.html"><img src="./assets/img/carrito-icon.png" alt="carrito" class="carrito" /></a>
+              <span class="start-100 badge rounded-pill bg-danger badgeCarrito">
+                {{carrito.length}}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/img/carrusel-perritos.gif" class="d-block imgCarrusel w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/carrusel-michi.gif" class="d-block imgCarrusel w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/carrusel-1.gif" class="d-block imgCarrusel w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/carrusel.gif" class="d-block imgCarrusel w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/carrusel-2.gif" class="d-block imgCarrusel w-100" alt="..." />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="  container-fluid d-flex flex-column justify-content-around align-items-center flex-md-row mt-lg-4 justify-content-lg-center">
+      <div>
+        <a href="./farmacia.html" class="iconosFyJ m-4 circuloIconoF d-flex flex-column align-items-center justify-content-center">
+          <div class="mt-lg-5 pt-lg-5">
+            <div class="mt-5 pt-5">
+              <h3 class="mt-5 pt-5">Farmacia</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <a href="./juguetes.html" class="iconosFyJ m-4 circuloIconoJ d-flex flex-column align-items-center justify-content-center">
+        <div class="mt-lg-5 pt-lg-5">
+        <div class="mt-5 pt-5">
+          <h3 class="mt-5 pt-5">Juguetes</h3>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <hr class="mt-5">
+    <div class="container-fluid d-flex flex-column justify-content-around align-items-center flex-lg-row col-lg-10">
+      <div class="container d-flex flex-column justify-content-around align-items-center text-lg-center">
+        <img class="camion" src="./assets/img/mover-truck.png" alt="camion" />
+        <h4>ENVÍOS A TODO EL PAÍS</h4>
+        <p>
+          Envío seguro, compra hoy y recibi tu pedido en máximo 48hs hábiles.
+        </p>
+      </div>
+
+      <div class="container d-flex flex-column justify-content-around align-items-center">
+        <img src="./assets/img/shield.png" alt="candado" />
+        <h4>SITIO SEGURO</h4>
+        <p>Protegemos tus datos</p>
+      </div>
+
+      <div class="container d-flex flex-column justify-content-around align-items-center text-md-center">
+        <img src="./assets/img/dollar-coin.png" alt="simbolo de dolar" />
+        <h4>MEDIOS DE PAGO</h4>
+        <p>
+          Transferencia bancia, Mercado Pago, UALA, PagoFacil, Rapipago,
+          BaproPagos, Provincia Pagos.
+        </p>
+      </div>
+    </div>
+
+      <hr>
+
+    <div class="container-fluid d-flex mt-5 justify-content-center align-items-center flex-column flex-lg-row">
+      <div class="col-10 col-l-5 d-flex flex-wrap justify-content-center divNuestraHistoria col-lg-4">
+        <h2 class="text-center col-12 pt-3">Nuestra historia</h2>
+        <div class="d-flex justify-content-center align-items-center mt-1 mb-2 px-3 divNuestraHistoria2">
+          <p class="col-10 mb-0">
+            Franco Pet-Shop es una tienda que nació como un proyecto personal
+            por amor y dedicación hacia nuestras mascotas, cuyo nombre es en honor a mi amado perro "Franco", y que, varios años
+            después, se convirtió en una gran empresa. Nuestra misión es lograr
+            que nuestra comunidad comparta la misma pasión que nosotros por las
+            mascotas y, de esta forma, seguir fomentando el cuidado de las
+            mismas. Continuar brindando la mejor atención por medio de personal
+            capacitado para informar y cubrir las necesidades del cliente y su
+            mascota con productos de primera calidad.
+          </p>
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center col-lg-4">
+        <h2 class="text-center col-12 mt-4">Donde encontrarnos</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.686925810961!2d-58.4325723849982!3d-34.612077380457194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses!2sar!4v1657314547861!5m2!1ses!2sar"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="d-flex flex-column my-4 align-items-center col-lg-4">
+        <h2>❤Nuestro querido Franco❤</h2>
+        <img src="./assets/img/franco.jpg" class="col-10 franquito col-md-8" alt="foto de franco">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div  class="d-flex flex-column align-items-center justify-content-center">
+        <a class="text-light text-decoration-none text-center mt-2" href="./contacto.html">¿Tienes alguna idea que nos ayude a mejorar? Envíanos tus comentarios</a>
+      <div class="d-flex flex-column justify-content-between align-items-center" id="textofooter">
+        <img class="logoFooter my-2" src="./assets/img/logo-footer.png" >
+        <div class="redes mx-4">
+          <a class="p-2" href="#"><img src="./assets/img/facebook_icon.png" alt="facebook"></a>
+          <a class="p-2" href="#"><img src="./assets/img/icon_whatsapp.png" alt="whatsapp"></a>
+          <a class="p-2" href="#"><img src="./assets/img/instagram_icon.png" alt="instagram"></a>
+        </div>
+      </div>
+        <p class="text-center text-light pt-2">Mind Hub Java - cohort 30 -</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

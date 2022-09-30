@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favIcon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Farmacia</title>
+</head>
+
+<body id="app">
+    <header>
+        <nav id="nav-bar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+              <a href="./index.html">
+                <img src="./assets/img/logoFrancoPetShop.png" alt="logo Franco" class="logo" />
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="btn btn-secondary navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav container d-flex justify-content-end align-items-center">
+                  <li class="nav-item">
+                    <a class="aNav" aria-current="page" href="./index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="./juguetes.html">Juguetes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="#">Farmacia</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="aNav" href="./contacto.html">Contacto</a>
+                  </li>
+                  <li>
+                    <a href="./carrito.html"><img src="./assets/img/carrito-icon.png" alt="carrito" class="carrito" /></a>
+                    <span class="start-100 badge rounded-pill bg-danger badgeCarrito">
+                      {{carrito.length}}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              </div>
+          </nav>
+    </header>
+
+    <main>
+        <div class="mt-md-3">
+            <img class="w-100" src="./assets/img/banner-farmacia.gif" alt="imagen farmacia">
+        </div>
+        <div class="container">
+            <section class="d-flex flex-column justify-content-center align-items-center pt-3">
+                <form class="d-flex w-50" role="search">
+                    <input class="form-control me-2" @keyup="filtroInputTexto" v-model="inputTexto" type="search"
+                    placeholder="Tu busqueda" aria-label="Search">
+                </form>
+            </section>
+        </div>
+
+        <div class="text-center mt-3 mb-lg-4">
+            <h3>Ordenar por:</h3>
+            <form class="container filtrosCards d-flex justify-content-around align-items-center col-lg-7" action="">
+                <div class="container d-flex justify-content-center align-items-center p-3">
+                <label for="ordenarAaZ">De la A a Z
+                    <input type="radio" @change="ordenAZ(objeto)" name="ordenar" id="ordenarAaZ">
+                </label>
+                </div>
+                <div class="container d-flex justify-content-center align-items-center p-3">
+                <label for="ordenarZaA">De la Z a A
+                    <input type="radio" name="ordenar" @change="ordenZA(objeto)" id="ordenarZaA">
+                </label>
+                </div>
+                <div class="container d-flex justify-content-center align-items-center p-3">
+                <label for="ordenarMayor">Mayor precio
+                        <input type="radio" @change="ordenMayorPrecio(objeto)" name="ordenar" id="ordenarMayor">
+                </label>
+                </div>
+                <div class="container d-flex justify-content-center align-items-center p-3">
+                <label for="ordenarMenor">Menor precio
+                        <input type="radio" @change="ordenMenorPrecio(objeto)" name="ordenar" id="ordenarMenor">
+                </label>
+                </div>
+            </form>
+        </div>
+
+        <div class=" d-flex justify-content-center align-items-center flex-md-row  flex-md-wrap">
+            <div class="gap-4 my-3 d-flex flex-column flex-md-row flex-md-wrap col-lg-8 col-md-12 col-8 align-items-center justify-content-center">
+                <div class="justify-content-center" v-for="objeto in objetosTienda" data-aos="zoom-in">
+                    <div v-if="objeto.stock <= 5" class="d-flex justify-content-center">
+                        <span
+                            class="badge rounded-pill text-bg-danger position-absolute top-0 mt-3 start-10 translate-middle">Quedan
+                            pocas unidades
+                        </span>
+                    </div>
+                    <div class="img-container">
+                        <div class="skewed d-flex justify-content-center">
+                            <div id="img" class="rounded">
+                                <img :src="objeto.imagen" class="card-img-top" :alt="objeto.imagen" id="imgCard">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content p-3 d-flex flex-column justify-content-between">
+                        <p>{{objeto.nombre}}</p>
+                        <p>${{objeto.precio}}</p>
+                        <div class="d-flex justify-content-between">
+                            <button @click="agregarAlCarrito(objeto)" href="#" class="btn btn-dark"
+                            :disabled="objeto.cantidad >= objeto.stock">{{objeto.cantidad >= objeto.stock ? 'Sin stock' : 'Agregar al carrito'}} </button>
+                            <section :id="objeto._id" class="modal">
+                                <div class="modal_container_tienda">
+                                    <p class="card-text">
+                                        {{objeto.descripcion}}
+                                    </p>
+                                    <a href="" class="cerrar">CERRAR</a>
+                                </div>
+                            </section>
+                            <button type="button" class="btn btn-dark"><a :href="'#'+objeto._id"
+                                    class="text-decoration-none justify-content-center  text-light fw-bold">Ver más</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div  class="d-flex flex-column align-items-center justify-content-center">
+            <a class="text-light text-decoration-none text-center mt-2" href="./contacto.html">¿Tienes alguna idea que nos ayude a mejorar? Envíanos tus comentarios</a>
+          <div class="d-flex flex-column justify-content-between align-items-center" id="textofooter">
+            <img class="logoFooter my-2" src="./assets/img/logo-footer.png" >
+            <div class="redes mx-4">
+              <a class="p-2" href="#"><img src="./assets/img/facebook_icon.png" alt="facebook"></a>
+              <a class="p-2" href="#"><img src="./assets/img/icon_whatsapp.png" alt="whatsapp"></a>
+              <a class="p-2" href="#"><img src="./assets/img/instagram_icon.png" alt="instagram"></a>
+            </div>
+          </div>
+            <p class="text-center text-light pt-2">Mind Hub Java - cohort 30 -</p>
+        </div>
+      </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

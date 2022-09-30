@@ -1,0 +1,345 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    font-size: 62,5%
+}
+
+header{
+    height: 10vh;
+}
+
+main {
+    min-height: 80vh;
+    background-color: #fff7c4;
+}
+nav {
+    background-color: black;
+}
+
+.aNav {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1.20rem;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 3.5px;
+    transition: background-size .5s; 
+}
+
+.aNav:hover {
+    color: #ffffff;
+    background-size: 100% 3.5px; 
+}
+
+.carrito{
+    width: 5rem;
+}
+
+.logo{
+    width: 12rem;
+}
+
+.filtrosCards label:hover {
+    font-weight: 500;
+    text-decoration: underline; 
+}
+
+.filtrosCards label {
+    cursor: pointer;
+}
+.img-container{
+    margin-bottom: -50px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skewed{
+    width: 250px;
+    height: 320px;
+    margin: 50px 0 -50px 27px;
+    border-radius: 30px;
+    transform: skewY(15deg);
+    overflow: hidden;
+}
+
+#img{
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+    transform: skewY(-15deg);
+    background-size: 100%;
+    transition: all 0.3s ease;
+}
+
+#imgCard{
+    height: 250px;
+    width: 250px;
+}
+
+.content{
+    width: 300px;
+    height: 175px;
+    border-radius: 5px;
+    box-shadow:rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    background-color: whitesmoke;
+}
+.modal {
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.551);
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    --opacity: 0;
+    --pointer: none;
+    opacity: var(--opacity);
+    pointer-events: var(--pointer);
+    transition: opacity .5s;
+}
+
+.modal:target .modal_picture{
+    animation: scale .5s 1.5s backwards;
+}
+
+.modal:target {
+    --opacity: 1;
+    --pointer: unset;
+}
+
+.modal:target .modal_container {
+    animation: show 1s .5s backwards;
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(0);
+    }
+}
+
+@keyframes show {
+    0%{
+        transform: translateY(-150vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.modal_container {
+    margin: auto;
+    background: gray;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow: hidden;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1em;
+}
+
+.modal_container_tienda {
+    margin: auto;
+    background: gray;
+    max-width: 600px;
+    /* max-height: 90%; */
+    overflow: hidden;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1em;
+}
+
+.modal_picture {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.imgg {
+    width: 100%;
+    display: block;
+}
+
+.modal_contacto{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imggContacto{
+    width: 10rem;
+}
+
+.h2 {
+    font-size: 2.5rem;
+}
+
+.cerrar {
+    border: 1px solid;
+    padding: .5rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    border-radius: .4em;
+}
+
+.cerrar:hover{
+    color: whitesmoke;
+}
+
+.badge {
+    z-index: 5 !important;
+}
+
+.badgeCarrito{
+    transform: translate(-50%, -25px)!important;
+}
+.borrarProducto{
+    width: 2rem;
+}
+.botonEliminarProducto{
+    border: none;
+}
+
+.cardCarrito {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
+    margin: 0.5rem;
+    background-color: white;
+}
+
+.cardToalAPagar{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
+    padding: .8rem;
+    background-color: white;
+}
+
+iframe {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 360px;
+}
+
+.divNuestraHistoria {
+    background-color: #f9ecaf ;
+    border-radius: 1rem;
+}
+
+.circuloIconoF{
+    border-radius: 360px;
+    background-image: url(./assets/img/farmacia-icono.png);
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    text-decoration: none !important;
+    color: black;
+}
+
+.circuloIconoJ{
+    border-radius: 360px;
+    background-image: url(./assets/img/jugueteria-icono.gif);
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    text-decoration: none !important;
+    color: black;
+}
+
+.franquito{
+    border-radius: 900px;
+}
+
+footer{
+    background-color:#a09d8e;
+}
+
+footer img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.logoFooter {
+    width: 5rem;
+    height: 5rem;
+}
+.imgCarrusel {
+    height: 20vh;
+}
+
+@media (min-width:768px){
+    header{
+        height: 8vh;
+    }
+    iframe {
+        width: 30rem;
+        height: 30rem;
+    }
+    .imgCarrusel {
+        height: 28vh;
+    }
+    .divForm{
+        background-color: rgba(0, 0, 0, 0.247);
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+}
+
+@media (min-width:1024px){
+    .carrito{
+        width: 4rem;
+    }
+    .circuloIconoF{
+        width: 15rem;
+        height: 15rem;
+    }
+    
+    .circuloIconoJ{
+        width: 15rem;
+        height: 15rem;
+    }
+    
+    .iconosFyJ:hover{
+        transform: scale(1.15);
+    }
+    iframe {
+        width: 30rem;
+        height: 30rem;
+        margin-bottom: 2rem;
+    }
+    .divNuestraHistoria {
+        background-color: rgba(255, 0, 0, 0);
+    }
+    .divNuestraHistoria2 {
+        border-radius: 360px;
+        width: 30rem;
+        height: 30rem;
+        background-color: #f9ecaf;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    
+    .franquito{
+        width: 30rem ;
+        height: 30rem;
+    }
+    .imgCarrusel {
+        height: 33vh;
+    }
+    nav {
+        height: 10vh;
+    }
+
+    .camion{
+        width: 10rem;
+    }
+
+    .divForm{
+        background-color: rgba(0, 0, 0, 0.247);
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+}
